@@ -86,6 +86,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapGet("/", () => Results.Ok(new { message = "CampusEats API is running", status = "Healthy" }));
 
 // Seed Menu on Startup
 using (var scope = app.Services.CreateScope())
